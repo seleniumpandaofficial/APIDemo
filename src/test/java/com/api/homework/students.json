@@ -1,0 +1,64 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "location": "City A",
+      "phone": "123-456-7890",
+      "courses": [
+        "Mathematics",
+        "Physics"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "location": "City B",
+      "phone": "987-654-3210",
+      "courses": [
+        "History",
+        "English"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Bob Johnson",
+      "location": "City C",
+      "phone": "555-123-4567",
+      "courses": [
+        "Computer Science",
+        "Chemistry"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Alice Brown",
+      "location": "City D",
+      "phone": "789-012-3456",
+      "courses": [
+        "Biology",
+        "Art"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Chris Wilson",
+      "location": "City E",
+      "phone": "222-333-4444",
+      "courses": [
+        "Economics",
+        "Psychology"
+      ]
+    },
+    {
+      "name": "Sarthak Panda",
+      "location": "Alexandria",
+      "phone": "987-654-3210",
+      "courses": [
+        "Python",
+        "AI"
+      ],
+      "id": "25b9"
+    }
+  ]
+}
