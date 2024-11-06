@@ -6,14 +6,23 @@ import io.restassured.path.json.JsonPath;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import static io.restassured.RestAssured.given;
 
 public class Books {
 
+
+    //Homework
 //using the isbn and aisle value for the first time and validating the response
 //using the same isbn and aisle value and validating the response
+    //Add a book and using the ID in the response, delete the book
+    //Add multiple books using  @DataProvider and delete them too
+    //Use Excel sheet to add books - refer to the ExcelCode which we learnt
 
-    @Test(priority = 1,dataProvider = "getData")
+    @Test(priority = 1,dataProvider = "getData", enabled = false)
     public void addingBooksUsingISBNandAISLEforthefirsttime(String isbn, String aisle){
         RestAssured.baseURI = "http://216.10.245.166";
        String response =  given().header("Content-Type", "application/json")
@@ -32,10 +41,10 @@ public class Books {
     }
 
     @Test(priority = 2)
-    public void addingBooksUsingISBNandAISLEforthesecondtime(){
+    public void addingBooksUsingISBNandAISLEforthesecondtime() throws IOException {
         RestAssured.baseURI = "http://216.10.245.166";
         String response =  given().header("Content-Type", "application/json")
-                .body(Dynamic_Payload.addBookPayload("uvwxyy", "998888"))
+                .body(new String(Files.readAllBytes(Paths.get("D:\\AUTOMATION\\REST_ASSURED\\AddBooks.json"))))
                 .when().post("/Library/Addbook.php")
                 .then().assertThat().statusCode(200).extract().response().asString();
         System.out.println("The response is : " + response);
